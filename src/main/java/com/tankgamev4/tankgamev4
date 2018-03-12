@@ -1,0 +1,10 @@
+输入流：数据源到内存
+输出流：内存到数据源时
+
+字节流：inputstream,outputstream, 可用于读取二进制文件及任何类型文件
+
+字符流: writer, reader 可用于读取文本文件
+
+Tankgamev4 Function
+
+1.
