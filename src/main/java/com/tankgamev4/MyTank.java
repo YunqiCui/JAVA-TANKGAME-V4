@@ -10,10 +10,13 @@ import com.tankgamev4.entity.Bomb;
 import com.tankgamev4.entity.Tank;
 import com.tankgamev4.model.EnemyTank;
 import com.tankgamev4.model.PlayerTank;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.util.Vector;
 
 public class MyTank extends JPanel implements KeyListener, Runnable {
@@ -29,9 +32,9 @@ public class MyTank extends JPanel implements KeyListener, Runnable {
 
 
     public MyTank() {
+    	
         pt = new PlayerTank(100, 250);
         pt.isLive = true;
-
         for (int i = 0; i < enemySize; i++) {
             EnemyTank et = new EnemyTank((i + 1) * 50, 0);
             et.isLive = true;
@@ -50,9 +53,13 @@ public class MyTank extends JPanel implements KeyListener, Runnable {
         y = pt.getY();
 
         //Define 3 images, combine them to make a bomb.
-        im1 = Toolkit.getDefaultToolkit().getImage("src/main/resources/bomb_1.gif");
-        im2 = Toolkit.getDefaultToolkit().getImage("src/main/resources/bomb_2.gif");
-        im3 = Toolkit.getDefaultToolkit().getImage("src/main/resources/bomb_3.gif");
+        try {
+            im1 = ImageIO.read(new File("src/main/resources/bomb_1.gif"));
+            im2 = ImageIO.read(new File("src/main/resources/bomb_2.gif"));
+            im3 = ImageIO.read(new File("src/main/resources/bomb_3.gif"));
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void paint(Graphics g) {
