@@ -2,11 +2,12 @@ package com.tankgamev4.model;
 
 import com.tankgamev4.entity.Bullet;
 import com.tankgamev4.entity.Tank;
-
 import java.util.Vector;
 
 public class EnemyTank extends Tank implements Runnable {
-
+    
+	
+	
     public Vector<Bullet> ebv = new Vector<Bullet>();
     public Bullet b = null;
 
@@ -89,7 +90,7 @@ public class EnemyTank extends Tank implements Runnable {
             }
 
             this.direct = (int) (Math.random() * 4);
-            //Ememy Tank Generate Bullet
+            //Enemy Tank Generate Bullet
             if (this.isLive) {
                 if (ebv.size() < 5) {
                     switch (this.direct) {
@@ -122,4 +123,13 @@ public class EnemyTank extends Tank implements Runnable {
             }
         }
     }
+    
+    public boolean isOver(){
+    	
+    	boolean b = false;
+    	
+    	return b;
+    }
+
 }
+
