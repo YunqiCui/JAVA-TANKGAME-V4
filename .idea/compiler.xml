@@ -9,5 +9,8 @@
         <module name="TANKGAMEV4" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TANKGAMEV4" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

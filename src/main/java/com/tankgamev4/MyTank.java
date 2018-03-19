@@ -29,16 +29,19 @@ public class MyTank extends JPanel implements KeyListener, Runnable {
     public int y = 0;
     Image im1,im2,im3;
     Thread t,t2;
+    Boolean ifPaused;
 
 
     public MyTank() {
-    	
+
+        ifPaused = false;
         pt = new PlayerTank(100, 250);
         pt.isLive = true;
         for (int i = 0; i < enemySize; i++) {
             EnemyTank et = new EnemyTank((i + 1) * 50, 0);
             et.isLive = true;
             et.setType(0);
+            et.setEtv(etv);
             etv.add(et);
             Bullet eb = new Bullet(et.x,et.y,et.direct);
             et.ebv.add(eb);
@@ -133,7 +136,7 @@ public class MyTank extends JPanel implements KeyListener, Runnable {
 
     //Draw Tank Function
     public void drawTank(int x, int y, Graphics g, int direct, int type) {
-        //Tpye of Tank
+        //Type of Tank
         switch (type) {
             case 0:
                 g.setColor(Color.cyan);
@@ -228,7 +231,28 @@ public class MyTank extends JPanel implements KeyListener, Runnable {
             pt.setDirect(3);
             pt.moveLeft();
 
-        } else {
+        }
+        //Pause Game
+//        else if(e.getKeyCode() == KeyEvent.VK_P){
+//
+//            if(!ifPaused){
+//                EnemyTank et;
+//                Bullet b;
+//                for (int i = 0; i <etv.size() ; i++) {
+//                    et = etv.get(i);
+//                    et.setSpeed(0);
+//                    for (int j = 0; j < et.ebv.size(); j++) {
+//                        b = et.ebv.get(j);
+//                        b.setSpeed(0);
+//                    }
+//                }
+//                ifPaused = true;
+//            }else {
+//
+//            }
+//
+//        }
+        else {
             System.out.println("Not a direction key");
         }
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
