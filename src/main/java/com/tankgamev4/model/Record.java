@@ -1,6 +1,6 @@
 package com.tankgamev4.model;
 
-import sun.reflect.annotation.ExceptionProxy;
+import com.tankgamev4.entity.Node;
 
 import java.io.*;
 import java.util.Vector;

@@ -8,8 +8,9 @@ package com.tankgamev4.gui;/*
 import com.tankgamev4.entity.Bullet;
 import com.tankgamev4.entity.Bomb;
 import com.tankgamev4.entity.Tank;
+import com.tankgamev4.model.AudioPlay;
 import com.tankgamev4.model.EnemyTank;
-import com.tankgamev4.model.Node;
+import com.tankgamev4.entity.Node;
 import com.tankgamev4.model.PlayerTank;
 import com.tankgamev4.model.Record;
 
@@ -88,6 +89,9 @@ public class MyTank extends JPanel implements KeyListener, Runnable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        AudioPlay ap = new AudioPlay("src/main/resources/start.wav");
+        ap.start();
     }
 
     public void paint(Graphics g) {

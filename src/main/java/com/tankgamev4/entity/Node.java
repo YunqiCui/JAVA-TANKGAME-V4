@@ -1,4 +1,4 @@
-package com.tankgamev4.model;
+package com.tankgamev4.entity;
 
 public class Node {
     public int x;
