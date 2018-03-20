@@ -1,4 +1,4 @@
-package com.tankgamev4;
+package com.tankgamev4.gui;
 
 import javax.swing.*;
 import java.awt.*;

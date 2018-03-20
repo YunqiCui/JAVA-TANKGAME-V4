@@ -2,6 +2,8 @@ package com.tankgamev4.model;
 
 import com.tankgamev4.entity.Bullet;
 import com.tankgamev4.entity.Tank;
+
+import java.util.Arrays;
 import java.util.Vector;
 
 public class EnemyTank extends Tank implements Runnable {
@@ -93,6 +95,7 @@ public class EnemyTank extends Tank implements Runnable {
             //Enemy Tank Generate Bullet
             if (this.isLive) {
                 if (ebv.size() < 5) {
+
                     switch (this.direct) {
                         case 0:
                             b = new Bullet(x + 10, y, 0);
@@ -114,6 +117,7 @@ public class EnemyTank extends Tank implements Runnable {
                             ebv.add(b);
                             break;
                     }
+
                     Thread t = new Thread(b);
                     t.start();
                 }
